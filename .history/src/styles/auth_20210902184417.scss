@@ -1,0 +1,26 @@
+#page-auth {
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+
+  aside {
+    flex: 7;
+
+    background: #835afd;
+    color: #fff;
+
+    display: flex;
+    flex-direction: column; // pra ficar um abaixo do outro no aside
+    justify-content: center; // verticalmente o conteudo vai ficar ao centro
+
+    padding: 120px 80px;
+
+    img {
+      max-width: 320px;
+    }
+  }
+
+  main {
+    flex: 8;
+  }
+}
