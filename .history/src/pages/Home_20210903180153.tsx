@@ -10,9 +10,7 @@ import { Button } from '../components/Button';
 export function Home() {
   const history = useHistory();
 
-  function navigateToNewRoom() {
-    history.push('/rooms/new')
-  }
+  function navigateToNewRoom
 
   return (
     <div id="page-auth">
@@ -24,7 +22,7 @@ export function Home() {
       <main>
         <div className="main-content">
           <img src={logoImg} alt="Letmeask" />
-          <button onClick={navigateToNewRoom} className="create-room">
+          <button className="create-room">
             <img src={googleIconImg} alt="Logo do Google" />
             Create a room using Google
           </button>
