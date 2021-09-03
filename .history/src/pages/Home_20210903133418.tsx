@@ -3,7 +3,6 @@ import logoImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg'
 
 import '../styles/auth.scss';
-import { Button } from '../components/Button';
 
 export function Home() {
   return (
@@ -11,7 +10,7 @@ export function Home() {
       <aside>
         <img src={illustrationImg} alt="Ilustracao simbolizando perguntas e respostas" />
         <strong>Create live Q&amp;A rooms</strong>
-        <p>Answer your audience in real time</p>
+        <p>AnswerTire as duvidas da sua audiencia em tempo real</p>
       </aside>
       <main>
         <div className="main-content">
@@ -26,9 +25,9 @@ export function Home() {
             type="text"
             placeholder="Digite o codigo da sala"
             />
-            <Button type="submit">
+            <button type="submit">
               Enter in a room
-            </Button>
+            </button>
           </form>
         </div>
       </main>

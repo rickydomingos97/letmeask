@@ -20,7 +20,7 @@ export function Home() {
             <img src={googleIconImg} alt="Logo do Google" />
             Create a room using Google
           </button>
-          <div className="separator">or come into in a room</div>
+          <div className="separator">or come into in a rooms</div>
           <form>
             <input
             type="text"

@@ -3,15 +3,14 @@ import logoImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg'
 
 import '../styles/auth.scss';
-import { Button } from '../components/Button';
 
 export function Home() {
   return (
     <div id="page-auth">
       <aside>
         <img src={illustrationImg} alt="Ilustracao simbolizando perguntas e respostas" />
-        <strong>Create live Q&amp;A rooms</strong>
-        <p>Answer your audience in real time</p>
+        <strong>Crie salas de Q&amp;A ao-vivo</strong>
+        <p>Tire as duvidas da sua audiencia em tempo real</p>
       </aside>
       <main>
         <div className="main-content">
@@ -20,15 +19,15 @@ export function Home() {
             <img src={googleIconImg} alt="Logo do Google" />
             Create a room using Google
           </button>
-          <div className="separator">or come into in a room</div>
+          <div className="separator">ou entre em uma sala</div>
           <form>
             <input
             type="text"
             placeholder="Digite o codigo da sala"
             />
-            <Button type="submit">
-              Enter in a room
-            </Button>
+            <button type="submit">
+              Entrar na sala
+            </button>
           </form>
         </div>
       </main>

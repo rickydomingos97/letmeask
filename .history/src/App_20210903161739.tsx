@@ -4,7 +4,8 @@ import { NewRoom } from "./pages/NewRoom";
 
 function App() {
   return (
-   <NewRoom />
+   // <Home />
+   <NewRoom/>
   );
 }
 

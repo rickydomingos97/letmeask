@@ -28,7 +28,7 @@ export function Home() {
             />
             <Button type="submit">
               Enter in a room
-            </Button>
+            </But>
           </form>
         </div>
       </main>

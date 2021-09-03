@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes } from 'react'
 
-import '../styles/button.scss';
+impoer
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
 
 export function Button(props: ButtonProps) {

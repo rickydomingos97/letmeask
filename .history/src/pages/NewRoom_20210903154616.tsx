@@ -5,7 +5,7 @@ import googleIconImg from '../assets/images/google-icon.svg'
 import '../styles/auth.scss';
 import { Button } from '../components/Button';
 
-export function Home() {
+export function NewRoom() {
   return (
     <div id="page-auth">
       <aside>
@@ -16,10 +16,7 @@ export function Home() {
       <main>
         <div className="main-content">
           <img src={logoImg} alt="Letmeask" />
-          <button className="create-room">
-            <img src={googleIconImg} alt="Logo do Google" />
-            Create a room using Google
-          </button>
+          <h2>Create a new room</h2>
           <div className="separator">or come into in a room</div>
           <form>
             <input
