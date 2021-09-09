@@ -24,7 +24,7 @@ function App() {
 // primeiro qual funcao quero executar
 // segundo parametro, quando eu quero executar essa funcao
 //esse segundo parametro sempre vai ser um array
-  useEffect(() => {}, [])
+  useEffect(() => {}, )
 
   async function signInWithGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider();

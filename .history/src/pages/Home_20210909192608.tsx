@@ -11,12 +11,9 @@ import { useContext } from 'react';
 
 export function Home() {
   const history = useHistory();
-  const { user, signInWithGoogle } = useContext(AuthContext);
+  const {  } = useContext(AuthContext);
 
-  async function handleCreateRoom() {
-    if (!user) {
-      await signInWithGoogle()
-    }
+  function handleCreateRoom() {
     history.push('/rooms/new')
   }
 

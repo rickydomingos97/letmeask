@@ -21,10 +21,8 @@ export const AuthContext = createContext({} as AuthContextType); // as any so pa
 
 function App() {
   const [user, setUser] = useState<User>();  // podemos setar sem nada por que ainda nao existe o usuario
-// primeiro qual funcao quero executar
-// segundo parametro, quando eu quero executar essa funcao
-//esse segundo parametro sempre vai ser um array
-  useEffect(() => {}, [])
+// primeiro qual funca
+  useEffect(() => {}, )
 
   async function signInWithGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider();

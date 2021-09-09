@@ -13,9 +13,9 @@ export function Home() {
   const history = useHistory();
   const { user, signInWithGoogle } = useContext(AuthContext);
 
-  async function handleCreateRoom() {
+  asynfunction handleCreateRoom() {
     if (!user) {
-      await signInWithGoogle()
+      signInWithGoogle()
     }
     history.push('/rooms/new')
   }

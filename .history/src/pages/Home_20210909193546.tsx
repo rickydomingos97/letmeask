@@ -15,7 +15,7 @@ export function Home() {
 
   async function handleCreateRoom() {
     if (!user) {
-      await signInWithGoogle()
+      signInWithGoogle()
     }
     history.push('/rooms/new')
   }

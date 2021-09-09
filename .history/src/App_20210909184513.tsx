@@ -1,36 +1,24 @@
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState } from 'react';
 import { BrowserRouter, Route  } from 'react-router-dom';
 
 import { Home } from './pages/Home';
 import { NewRoom } from "./pages/NewRoom";
 import { auth, firebase } from './service/firebase';
-// criar tipagem dentro do typescript
-
-type User = {
-  id: string;
-  name: string;
-  avatar: string;
-}
-
+// criar tipagem dentro do typescrip
 type AuthContextType = {
-  user: User | undefined;
-  signInWithGoogle: () => Promise<void>;
+  user: object;
+  signInWithGoogle () => void;
 }
 
-export const AuthContext = createContext({} as AuthContextType); // as any so para resolver o erro por enquanto, pois precisa da tipagem nessa linha
+export const AuthContext = createContext({} as any); // as any so para resolver o erro por enquanto, pois precisa da tipagem nessa linha
 
 function App() {
-  const [user, setUser] = useState<User>();  // podemos setar sem nada por que ainda nao existe o usuario
-// primeiro qual funcao quero executar
-// segundo parametro, quando eu quero executar essa funcao
-//esse segundo parametro sempre vai ser um array
-  useEffect(() => {}, [])
+  const [user, setUser] = useState();  // podemos setar sem nada por que ainda nao existe o usuario
 
-  async function signInWithGoogle() {
+  function signInWithGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider();
 
-    const result = await auth.signInWithPopup(provider);
-
+    auth.signInWithPopup(provider).then(result => {
       if(result.user) {
         const { displayName, photoURL, uid} = result.user
 
@@ -44,6 +32,7 @@ function App() {
           avatar: photoURL
         })
       }
+    });
   }
 
   return (
