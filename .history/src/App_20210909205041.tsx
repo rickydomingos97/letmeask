@@ -26,19 +26,7 @@ function App() {
 //esse segundo parametro sempre vai ser um array
   useEffect(() => {
     auth.onAuthStateChanged(user => {
-      if (user) {
-        const { displayName, photoURL, uid} = user
-
-        if(!displayName || !photoURL) {
-          throw new Error('Missing information from Google Account');
-        }
-
-        setUser({
-          id: uid,
-          name: displayName,
-          avatar: photoURL
-        })
-      }
+      if
     })
   }, [])
 
