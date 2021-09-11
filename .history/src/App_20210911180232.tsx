@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from 'react'; // useeffect eh um Hook pra disparo de efetiso colaterais(funcionalidades)
+import { createContext, useState, useEffect } from 'react'; // useeffect eh um Hook pra disparo de efetiso colaterais()
 import { BrowserRouter, Route  } from 'react-router-dom';
 
 import { Home } from './pages/Home';
@@ -25,7 +25,7 @@ function App() {
 // segundo parametro, quando eu quero executar essa funcao
 //esse segundo parametro sempre vai ser um array
   useEffect(() => {
-    const unsubscribe =  auth.onAuthStateChanged(user => {
+    auth.onAuthStateChanged(user => {
       if (user) {
         const { displayName, photoURL, uid} = user
 
@@ -40,10 +40,6 @@ function App() {
         })
       }
     })
-
-    return () => {
-      unsubscribe();
-    }
   }, [])
 
   async function signInWithGoogle() {

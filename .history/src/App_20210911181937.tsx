@@ -24,8 +24,8 @@ function App() {
 // primeiro qual funcao quero executar
 // segundo parametro, quando eu quero executar essa funcao
 //esse segundo parametro sempre vai ser um array
-  useEffect(() => {
-    const unsubscribe =  auth.onAuthStateChanged(user => {
+  const unsubscribe useEffect(() => {
+    auth.onAuthStateChanged(user => {
       if (user) {
         const { displayName, photoURL, uid} = user
 
@@ -40,10 +40,6 @@ function App() {
         })
       }
     })
-
-    return () => {
-      unsubscribe();
-    }
   }, [])
 
   async function signInWithGoogle() {
