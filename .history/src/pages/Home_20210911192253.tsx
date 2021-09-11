@@ -1,13 +1,25 @@
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
+import googleIconImg from '../assets/images/google-icon.svg'
+
 import '../styles/auth.scss';
 import { Button } from '../components/Button';
+import { AuthContext } from '../contexts/AuthContext';
+import { useContext } from 'react';
 import { useAuth } from '../hooks/useAuth';
 
-export function NewRoom() {
-  // const { user } = useAuth;
+export function Home() {
+  const history = useHistory();
+  const { user, signInWithGoogle } = useAuth();
+
+  async function handleCreateRoom() {
+    if (!user) {
+      await signInWithGoogle()
+    }
+    history.push('/rooms/new')
+  }
 
   return (
     <div id="page-auth">
@@ -19,21 +31,20 @@ export function NewRoom() {
       <main>
         <div className="main-content">
           <img src={logoImg} alt="Letmeask" />
-          <h1>{user?.name}</h1>
-          <h2>Create a new room</h2>
-
+          <button onClick={handleCreateRoom} className="create-room">
+            <img src={googleIconImg} alt="Logo do Google" />
+            Create a room using Google
+          </button>
+          <div className="separator">or come into in a room</div>
           <form>
             <input
             type="text"
-            placeholder="Room's name"
+            placeholder="Digite o codigo da sala"
             />
             <Button type="submit">
-              To create room
+              Enter in a room
             </Button>
           </form>
-          <p>
-            Do you want to get into in a existent room? <Link to="/">click here</Link>
-          </p>
         </div>
       </main>
     </div>
